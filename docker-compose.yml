@@ -23,7 +23,7 @@ services:
     volumes:
       - db-store:/var/lib/mysql
     ports:
-      - 3316:3306
+      - 3306:3306
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
