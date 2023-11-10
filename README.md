@@ -16,3 +16,15 @@ $ mkdir -p storage/framework/views
 $ composer install
 $ php artisan key:generate
 ~~~
+
+## Artisan
+~~~sh
+$ docker compose up -d
+$ docker compose exec web /bin/bash
+
+# Controllerの作成
+$ php artisan make:controller [コントローラ名] /*RankutenController*/
+
+# Viewの作成
+$ php artisan make:view [ページの名前]
+~~~
