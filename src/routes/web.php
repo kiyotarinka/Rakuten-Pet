@@ -14,7 +14,7 @@ use App\Http\Controllers\RankutenController;
 |
 */
 
-Route::get('/', [RankutenController::class, 'top']);
+Route::get('/', [RankutenController::class, 'search']);
 Route::get('/result', [RankutenController::class, 'result']);
 
 Route::post('/', function () {
