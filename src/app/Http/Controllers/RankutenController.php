@@ -31,8 +31,8 @@ class RankutenController extends Controller
                     'toilet' => "トイレ",
                     'collar' => "首輪",
                     'lead' => "リード",
-               ]
-            ]
+               ],
+            ],
         ];
         return view('search', $datas);
     }
