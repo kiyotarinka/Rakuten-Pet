@@ -8,6 +8,9 @@
   </head>
   <body>
   <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+  p{
+    width:50%
+  }
   <h1>{{ $title }}</h1>
   </div>
 
