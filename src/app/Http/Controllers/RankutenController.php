@@ -21,7 +21,17 @@ class RankutenController extends Controller
                     'hamusuta' => "ハムスター",
                 ],
             ],
-            'genre' => "商品ジャンル",
+            'genre' => [
+               'title1' => "商品ジャンル",
+               'list1' => [ 
+                    'bed' => "寝具",
+                    'toy' => "おもちゃ",
+                    'feed' => "えさ",
+                    'toilet' => "トイレ",
+                    'collar' => "首輪",
+                    'lead' => "リード",
+               ]
+            ]
             'many' => "金額",
         ];
         return view('search', $datas);
