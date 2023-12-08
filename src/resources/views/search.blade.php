@@ -22,9 +22,10 @@
     <option value="{{ $key }}">{{ $value }}</option>
   @endforeach
 </select>
+<h4>{{$genre['title1']}}</h4>
 <select class="form-select" name="nnnnn" id="nnnnn">
   <option selected disabled>選択してください</option>
-  @foreach ($genre['list'] as $key => $value)
+  @foreach ($genre['list1'] as $key => $value)
     <option value="{{ $key }}">{{ $value }}</option>
   @endforeach
 <h4>{{$many}}</h1>
