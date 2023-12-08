@@ -36,7 +36,6 @@ class RankutenController extends Controller
         ];
         return view('search', $datas);
     }
-
     public function result() {
         $datas = [
             'title' => "検索結果",
