@@ -13,6 +13,9 @@
 </html>
 <h1>{{$search_text}}</h1>
 <h1>{{$small_text}}</h1>
-<h1>{{$pet}}</h1>
+<h1>{{$pet['title']}}</h1>
+@foreach ($pet['list'] as $key => $value)
+    <p>This is {{ $key }} :  {{ $value }}</p>
+@endforeach
 <h1>{{$genre}}</h1>
 <h1>{{$many}}</h1>
