@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 class RankutenController extends Controller
 {
     public function search() {
-        return view('search');
+        $datas = [
+            'title' => "テスト",
+            'search_text' => "バッグ",
+        ];
+        return view('search', $datas);
     }
 
     public function result() {
