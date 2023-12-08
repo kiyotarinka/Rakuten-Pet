@@ -14,8 +14,11 @@
 <h1>{{$search_text}}</h1>
 <h1>{{$small_text}}</h1>
 <h1>{{$pet['title']}}</h1>
-@foreach ($pet['list'] as $key => $value)
-    <p>This is {{ $key }} :  {{ $value }}</p>
-@endforeach
+<select class="form-select" name="nnnnn" id="nnnnn">
+  <option selected disabled>選択してください</option>
+  @foreach ($pet['list'] as $key => $value)
+    <option value="{{ $key }}">{{ $value }}</option>
+  @endforeach
+</select>
 <h1>{{$genre}}</h1>
 <h1>{{$many}}</h1>
