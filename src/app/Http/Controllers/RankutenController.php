@@ -8,13 +8,22 @@ class RankutenController extends Controller
 {
     public function search() {
         $datas = [
-            'title' => "テスト",
-            'search_text' => "バッグ",
+            'title' => "ペット商品検索ページ",
+            'search_text' => "検索",
+            'small_text' => "絞り込み",
+            'pet' => "動物",
+            'genre' => "商品ジャンル",
+            'many' => "金額",
         ];
         return view('search', $datas);
     }
 
     public function result() {
-        return view('welcome');
+        $datas = [
+            'title' => "検索結果",
+            'users' => [],
+        ];
+
+        return view('result', $datas);
     }
 }
