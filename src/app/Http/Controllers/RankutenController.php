@@ -16,7 +16,9 @@ class RankutenController extends Controller
                 'list' => [
                     'dog' => "犬",
                     'cat' => "猫",
-                    'bird' => "とり",
+                    'bird' => "鳥類",
+                    'rabit' => "兎",
+                    'hamusuta' => "ハムスター",
                 ],
             ],
             'genre' => "商品ジャンル",
