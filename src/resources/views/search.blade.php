@@ -13,3 +13,6 @@
 </html>
 <h1>{{$search_text}}</h1>
 <h1>{{$small_text}}</h1>
+<h1>{{$pet}}</h1>
+<h1>{{$genre}}</h1>
+<h1>{{$many}}</h1>
