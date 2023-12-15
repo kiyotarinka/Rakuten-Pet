@@ -16,8 +16,9 @@
       <h1><center>{{ $title}}</center></h1>
     </div>
 
-
+    <br><br>
     <h3>{{$small_text}}</h1>
+      <br>
       <h4>{{$pet['title']}}</h4>
       <select class="form-select" name="nnnnn" id="nnnnn">
         <option selected disabled>選択してください</option>
@@ -25,19 +26,23 @@
         <option value="{{ $key }}">{{ $value }}</option>
         @endforeach
       </select>
+      <br><br>
       <h4>{{$genre['title1']}}</h4>
+      
       <select class="form-select" name="nnnnn" id="nnnnn">
         <option selected disabled>選択してください</option>
         @foreach ($genre['list1'] as $key => $value)
         <option value="{{ $key }}">{{ $value }}</option>
         @endforeach
       </select>
+      <br><br>
       <h4>{{ $genre['many']['title'] }}</h1>
         <select class="form-select" name="nnnnn" id="nnnnn">
           @foreach ($genre['many']['list1'] as $many)
           <option value="{{ $many }}">{{ $many->getName() }}</option>
           @endforeach
         </select>
+        <br><br>
         <h1>{{$search_text}}</h1>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
