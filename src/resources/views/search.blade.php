@@ -13,7 +13,7 @@
   <div class="container">
     <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
 
-      <h1>{{ $title }}</h1>
+      <h1><center>{{ $title}}</center></h1>
     </div>
 
 
