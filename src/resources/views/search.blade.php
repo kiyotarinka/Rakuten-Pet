@@ -11,7 +11,7 @@
 
 <body>
   <div class="container">
-    <div class="p-3 --bs-warning-text-emphasis bs-Warning-bg-subtle border border-warning-rgb rounded-3">
+    <div class="p-3 --bs-warning-text-emphasis bs-warning-bg-subtle border border-warning-rgb rounded-3">
 
       <h1><center>{{ $title}}</center></h1>
     </div>
