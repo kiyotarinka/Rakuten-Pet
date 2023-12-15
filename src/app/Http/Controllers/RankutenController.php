@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\ManeyTypes;
 use Illuminate\Http\Request;
 
 class RankutenController extends Controller
 {
-    public function search() {
+    public function search()
+    {
         $datas = [
             'title' => "        ペット商品検索ページ",
             'search_text' => "   検索",
             'small_text' => "   絞り込み",
-            'many' => "金額",
             'pet' => [
-                'title' => "   動物" ,
+                'title' => "   動物",
                 'list' => [
                     'dog' => "犬",
                     'cat' => "猫",
@@ -23,20 +24,26 @@ class RankutenController extends Controller
                 ],
             ],
             'genre' => [
-               'title1' => "商品ジャンル",
-               'list1' => [ 
+                'title1' => "商品ジャンル",
+                'list1' => [
                     'bed' => "寝具",
                     'toy' => "おもちゃ",
                     'feed' => "えさ",
                     'toilet' => "トイレ",
                     'collar' => "首輪",
                     'lead' => "リード",
-               ],
+                ],
+                'many' => [
+                    'title' => "金額",
+                    'list' => ManeyTypes::cases(),
+                ],
             ],
         ];
         return view('search', $datas);
     }
-    public function result() {
+
+    public function result()
+    {
         $datas = [
             'title' => "検索結果",
             'users' => [],
