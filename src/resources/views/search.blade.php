@@ -33,6 +33,11 @@
         @endforeach
       </select>
       <h4>{{ $genre['many']['title'] }}</h1>
+        <select class="form-select" name="nnnnn" id="nnnnn">
+          @foreach ($genre['many']['list1'] as $many)
+          <option value="{{ $many }}">{{ $many->getName() }}</option>
+          @endforeach
+        </select>
         <h1>{{$search_text}}</h1>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"

@@ -30,9 +30,9 @@ enum ManeyTypes: int
     public function getName(): string
     {
         return match ($this) {
-            self::MANEY1 => '100 ~ 200',
-            self::MANEY2 => '200 ~ 300',
-            self::MANEY3 => '300 ~ 400',
+            self::MANEY1 => '500 ~ 1000',
+            self::MANEY2 => '1000 ~ 3000',
+            self::MANEY3 => '3000 ~ 5000',
         };
     }
 }

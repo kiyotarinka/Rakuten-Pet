@@ -35,7 +35,7 @@ class RankutenController extends Controller
                 ],
                 'many' => [
                     'title' => "金額",
-                    'list' => ManeyTypes::cases(),
+                    'list1' => ManeyTypes::cases(),
                 ],
             ],
         ];
