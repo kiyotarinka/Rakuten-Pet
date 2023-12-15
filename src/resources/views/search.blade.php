@@ -12,7 +12,9 @@
 <body>
   <div class="container">
     <div class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3">
-
+    <?php
+        echo '<span style="background-color:success">' .$i. '</span> ';
+    ?>
       <h1><center>{{ $title}}</center></h1>
     </div>
 
