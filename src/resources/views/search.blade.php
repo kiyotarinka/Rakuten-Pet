@@ -11,7 +11,7 @@
 
 <body>
   <div class="container">
-    <nav class="navbar navbar-expand navbar-dark bg-warning fixed-top" >
+    <nav class="navbar navbar-expand navbar-light bg-warning fixed-top" >
       <div class="container-fluid">
       <p class="text-center"><h1 class="navbar-brand" href="#">{{ $title }}</h1></p>
       </div>
