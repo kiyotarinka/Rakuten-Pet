@@ -13,7 +13,7 @@
   <div class="container">
     <nav class="navbar bg-body-tertiary">
       <div class="container-fluid">
-        <h1 class="navbar-brand" href="#">{{ $title }}</h1>
+        <a class="navbar-brand" href="#"><h1>{{ $title }}</h1></a>
       </div>
     </nav>
 
