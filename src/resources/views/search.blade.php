@@ -11,13 +11,13 @@
 
 <body>
   <div class="container">
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar navbar-expand navbar-dark bg-warning fixed-top" >
       <div class="container-fluid">
       <p class="text-center"><h1 class="navbar-brand" href="#">{{ $title }}</h1></p>
       </div>
     </nav>
-
-    <br><br>
+//bg-body-tertiary" style="background-color:rgb(255, 224, 99),( 253, 227);"
+    <br><br><br><br>
     <h3>{{$small_text}}</h1>
       <br>
       <h4>{{$pet['title']}}</h4>
@@ -44,7 +44,7 @@
           @endforeach
         </select>
         <br><br>
-        <button type="button" class="btn btn-outline-danger"><h1>{{$search_text}}</h1></button>
+        <p class="text-end"><button type="button" class="btn btn-outline-danger"><h1>{{$search_text}}</h1></button></p>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
