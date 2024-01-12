@@ -11,10 +11,11 @@
 
 <body>
   <div class="container">
-    <div class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3">
-      
-      <h1><center>{{ $title}}</center></h1>
-    </div>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <h1 class="navbar-brand" href="#">{{ $title }}</h1>
+      </div>
+    </nav>
 
     <br><br>
     <h3>{{$small_text}}</h1>
