@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Enums\ManeyTypes;
 use Illuminate\Http\Request;
+use RakutenRws_Client;
 
 class RankutenController extends Controller
 {
@@ -44,9 +45,37 @@ class RankutenController extends Controller
 
     public function result()
     {
+        $client = new RakutenRws_Client();
+        define("RAKUTEN_APPLICATION_ID", config('app.rakuten_id'));
+
+        $client->setApplicationId(RAKUTEN_APPLICATION_ID);
+        $response = $client->execute('IchibaItemSearch',array(
+            'keyword' => '任意のキーワードを入れてください'
+        ));
+
+
+        $items = [];
+        if(!$response->isOk()){
+            abort(500);
+
+        } else {
+            foreach($response as $key => $rakutenItem){
+                $items[$key]['title'] = $rakutenItem['itemName'];
+                $items[$key]['price'] = $rakutenItem['itemPrice'];
+                $items[$key]['url'] = $rakutenItem['itemUrl'];
+                $items[$key]['count'] = $rakutenItem['count'];
+
+                if($rakutenItem['imageFlag']){
+                    $imgSrc = $rakutenItem['mediumImageUrls'][0]['imageUrl'];
+                    $items[$key]['img'] = $imgSrc;
+                }
+            }
+        }
+
         $datas = [
             'title' => "検索結果",
             'users' => [],
+            'items' => $items,
         ];
 
         return view('result', $datas);

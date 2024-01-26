@@ -185,4 +185,5 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+    'rakuten_id' => env('RAKUTEN_APPLICATION_ID', false),
 ];
