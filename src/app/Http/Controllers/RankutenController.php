@@ -64,6 +64,8 @@ class RankutenController extends Controller
                 $items[$key]['price'] = $rakutenItem['itemPrice'];
                 $items[$key]['url'] = $rakutenItem['itemUrl'];
                 $items[$key]['count'] = $rakutenItem['count'];
+                $items[$key]['taxFlag'] = $rakutenItem['taxFlag'];
+                $items[$key]['postageFlag'] = $rakutenItem['postageFlag'];
 
                 if($rakutenItem['imageFlag']){
                     $imgSrc = $rakutenItem['mediumImageUrls'][0]['imageUrl'];
