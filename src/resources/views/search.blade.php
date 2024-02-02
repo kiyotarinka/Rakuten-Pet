@@ -11,44 +11,49 @@
 
 <body>
   <div class="container">
-    <nav class="navbar navbar-expand navbar-light bg-warning fixed-top" >
+    <nav class="navbar navbar-expand navbar-light bg-warning fixed-top">
       <div class="container-fluid">
-      <p class="text-center"><h1 class="navbar-brand" href="#">{{ $title }}</h1></p>
+        <p class="text-center">
+        <h1 class="navbar-brand" href="#">{{ $title }}</h1>
+        </p>
       </div>
     </nav>
-//bg-body-tertiary" style="background-color:rgb(255, 224, 99),( 253, 227);"
-    <br><br><br><br>
-    <h3>{{$small_text}}</h1>
-      <br>
-      <h4>{{$pet['title']}}</h4>
-      <select class="form-select" name="nnnnn" id="nnnnn">
-        <option selected disabled>選択してください</option>
-        @foreach ($pet['list'] as $key => $value)
-        <option value="{{ $key }}">{{ $value }}</option>
-        @endforeach
-      </select>
-      <br><br>
-      <h4>{{$genre['title1']}}</h4>
-      
-      <select class="form-select" name="nnnnn" id="nnnnn">
-        <option selected disabled>選択してください</option>
-        @foreach ($genre['list1'] as $key => $value)
-        <option value="{{ $key }}">{{ $value }}</option>
-        @endforeach
-      </select>
-      <br><br>
-      <h4>{{ $genre['many']['title'] }}</h1>
+
+    <h3 class="mt-4">{{$small_text}}</h3>
+      <form action="{{ url('/result')}}" method="get" class="mt-1 form-horizontal">
+        <h4>{{$pet['title']}}</h4>
         <select class="form-select" name="nnnnn" id="nnnnn">
-          @foreach ($genre['many']['list1'] as $many)
-          <option value="{{ $many }}">{{ $many->getName() }}</option>
+          <option selected disabled>選択してください</option>
+          @foreach ($pet['list'] as $key => $value)
+          <option value="{{ $key }}">{{ $value }}</option>
           @endforeach
         </select>
-        <br><br>
-        <p class="text-end"><button type="button" class="btn btn-outline-danger"><h1>{{$search_text}}</h1></button></p>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-          crossorigin="anonymous"></script>
+        <h4 class="mt-2">{{$genre['title1']}}</h4>
+        <select class="form-select" name="nnnnn" id="nnnnn">
+          <option selected disabled>選択してください</option>
+          @foreach ($genre['list1'] as $key => $value)
+          <option value="{{ $key }}">{{ $value }}</option>
+          @endforeach
+        </select>
+
+        <h4 class="mt-2">{{ $genre['many']['title'] }}</h1>
+          <select class="form-select" name="nnnnn" id="nnnnn">
+            @foreach ($genre['many']['list1'] as $many)
+            <option value="{{ $many }}">{{ $many->getName() }}</option>
+            @endforeach
+          </select>
+
+        <div class="text-end mt-2">
+          <button type="submit" class="btn btn-large btn-outline-danger">
+            {{$search_text}}
+          </button>
+        </div>
+      </form>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
   </div>
 </body>
 
