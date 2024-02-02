@@ -29,7 +29,7 @@
           @endforeach
         </select>
 
-        <h4 class="mt-2">{{ $genre['many']['title'] }}</h1>
+        <h4 class="mt-2">{{ $genre['many']['title'] }}</h4>
           <select class="form-select" name="nnnnn" id="nnnnn">
           <option selected disabled>選択してください</option>
             @foreach ($genre['many']['list1'] as $many)
