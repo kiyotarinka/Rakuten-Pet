@@ -46,9 +46,9 @@ class RankutenController extends Controller
     public function result()
     {
         $client = new RakutenRws_Client();
-        define("RAKUTEN_APPLICATION_ID", config('app.rakuten_id'));
+        define("1024710924551300745", config('app.rakuten_id'));
 
-        $client->setApplicationId(RAKUTEN_APPLICATION_ID);
+        $client->setApplicationId(1024710924551300745);
         $response = $client->execute('IchibaItemSearch',array(
             'keyword' => '任意のキーワードを入れてください'
         ));
