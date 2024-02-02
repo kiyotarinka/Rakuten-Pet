@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\ManeyTypes;
+use App\Enums\GenruTypes;
 use Illuminate\Http\Request;
 use RakutenRws_Client;
 
@@ -25,15 +26,8 @@ class RankutenController extends Controller
                 ],
             ],
             'genre' => [
-                'title1' => "商品ジャンル",
-                'list1' => [
-                    'bed' => "寝具",
-                    'toy' => "おもちゃ",
-                    'feed' => "えさ",
-                    'toilet' => "トイレ",
-                    'collar' => "首輪",
-                    'lead' => "リード",
-                ],
+3                'title1' => "商品ジャンル",
+                'list1' => GenruTypes::cases(),
                 'many' => [
                     'title' => "金額",
                     'list1' => ManeyTypes::cases(),
@@ -46,11 +40,13 @@ class RankutenController extends Controller
     public function result()
     {
         $client = new RakutenRws_Client();
-        define("1024710924551300745", config('app.rakuten_id'));
+        define("RAKUTEN_APPLICATION_ID", config('app.rakuten_id'));
 
-        $client->setApplicationId(1024710924551300745);
+        $client->setApplicationId(RAKUTEN_APPLICATION_ID);
         $response = $client->execute('IchibaItemSearch',array(
-            'keyword' => '任意のキーワードを入れてください'
+            'keyword' => '任意のキーワードを入れてください',
+            'minPrice' => 100,
+            'maxPrice' => 10000,
         ));
 
 
