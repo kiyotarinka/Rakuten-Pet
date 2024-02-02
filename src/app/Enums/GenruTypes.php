@@ -14,7 +14,15 @@ enum GenruTypes: int
     case HOME = 206213;
     case MEDICINE = 566240;
 
+    public function getParams(): array
+    {
+        return match ($this) {
+            self::DOG => [
+                'genreId' => '犬用品',
 
+            ],
+        };
+    }
 
     public function getName(): string
     {
