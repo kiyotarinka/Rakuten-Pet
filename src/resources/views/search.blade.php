@@ -21,14 +21,6 @@
 
     <h3 class="mt-4">{{$small_text}}</h3>
       <form action="{{ url('/result')}}" method="get" class="mt-1 form-horizontal">
-        <h4>{{$pet['title']}}</h4>
-        <select class="form-select" name="nnnnn" id="nnnnn">
-          <option selected disabled>選択してください</option>
-          @foreach ($pet['list'] as $key => $value)
-          <option value="{{ $key }}">{{ $value }}</option>
-          @endforeach
-        </select>
-
         <h4 class="mt-2">{{$genre['title1']}}</h4>
         <select class="form-select" name="nnnnn" id="nnnnn">
           <option selected disabled>選択してください</option>
