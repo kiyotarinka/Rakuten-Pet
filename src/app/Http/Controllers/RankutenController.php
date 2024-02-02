@@ -15,16 +15,6 @@ class RankutenController extends Controller
             'title' => "        ペット商品検索ページ",
             'search_text' => "   検索",
             'small_text' => "   絞り込み",
-            'pet' => [
-                'title' => "   動物",
-                'list' => [
-                    'dog' => "犬",
-                    'cat' => "猫",
-                    'bird' => "鳥類",
-                    'rabit' => "兎",
-                    'hamusuta' => "ハムスター",
-                ],
-            ],
             'genre' => [
 3                'title1' => "商品ジャンル",
                 'list1' => GenruTypes::cases(),
