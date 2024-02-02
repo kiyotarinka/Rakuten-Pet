@@ -16,7 +16,7 @@ class RankutenController extends Controller
             'search_text' => "   検索",
             'small_text' => "   絞り込み",
             'genre' => [
-3                'title1' => "商品ジャンル",
+                'title1' => "商品ジャンル",
                 'list1' => GenruTypes::cases(),
                 'many' => [
                     'title' => "金額",
