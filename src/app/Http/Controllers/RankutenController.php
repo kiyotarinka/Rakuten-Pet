@@ -45,7 +45,7 @@ class RankutenController extends Controller
         $response = $client->execute('IchibaItemSearch', [
             'genreId' => $genreKey,
             'minPrice' => $manyRange['minPrice'],
-            'maxPrice' => 10000,
+            'maxPrice' => 5000,
         ]);
 
         $items = [];
