@@ -18,8 +18,31 @@ enum GenruTypes: int
     {
         return match ($this) {
             self::DOG => [
-                'genreId' => '犬用品',
-
+                'genruId' => '犬用品',
+            ],
+            self::CAT => [
+                'genruId' => '猫用品',
+            ],
+            self::FISH => [
+                'genruId' => '熱帯魚・アクアリウム',
+            ],
+            self::MINI => [
+                'genruId' => '小動物用品',
+            ],
+            self::BIRD => [
+                'genruId' => '鳥用品',
+            ],
+            self::CARE => [
+                'genruId' => 'ペット用お手入れ用品',
+            ],
+            self::DISH => [
+                'genruId' => 'ペット用食器・給水器・給餌器',
+            ],
+            self::HOME => [
+                'genruId' => '室内ペット用家電',
+            ],
+            self::MEDICINE => [
+                'genruId' => '動物用医薬品',
             ],
         };
     }

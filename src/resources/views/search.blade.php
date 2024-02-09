@@ -25,7 +25,7 @@
         <select class="form-select" name="nnnnn" id="nnnnn">
           <option selected disabled>選択してください</option>
           @foreach ($genre['list1'] as $key => $value)
-          <option value="{{ $key }}">{{ $value }}</option>
+          <option value="{{ $key }}">{{ $value->getName() }}</option>
           @endforeach
         </select>
 
