@@ -40,11 +40,10 @@ class RankutenController extends Controller
         $manyRange = $maney->getParams();
 
         $genreKey = $request->input("genre");
-        $genre = GenruTypes::from($genreKey);
 
         $client->setApplicationId(RAKUTEN_APPLICATION_ID);
         $response = $client->execute('IchibaItemSearch', [
-            'keyword' => 'ねこ',
+            'genreId' => $genreKey,
             'minPrice' => $manyRange['minPrice'],
             'maxPrice' => 10000,
         ]);
