@@ -35,9 +35,12 @@ class RankutenController extends Controller
         define("RAKUTEN_APPLICATION_ID", config('app.rakuten_id'));
 
         // 
-        $maneyKey = $request->input("");
+        $maneyKey = $request->input("many");
         $maney = ManeyTypes::from($maneyKey);
         $manyRange = $maney->getParams();
+
+        $genreKey = $request->input("genre");
+        $genre = GenruTypes::from($genreKey);
 
         $client->setApplicationId(RAKUTEN_APPLICATION_ID);
         $response = $client->execute('IchibaItemSearch', [
@@ -58,7 +61,6 @@ class RankutenController extends Controller
                 $items[$key]['title'] = $rakutenItem['itemName'];
                 $items[$key]['price'] = $rakutenItem['itemPrice'];
                 $items[$key]['url'] = $rakutenItem['itemUrl'];
-                $items[$key]['count'] = $rakutenItem['count'];
                 $items[$key]['taxFlag'] = $rakutenItem['taxFlag'];
                 $items[$key]['postageFlag'] = $rakutenItem['postageFlag'];
 
@@ -73,6 +75,7 @@ class RankutenController extends Controller
             'title' => "検索結果",
             'small_text' => "検索結果",
             'users' => [],
+            'search_text' => "   検索",
             'result_summary' => $datas,
             'items' => $items,
         ];

@@ -22,15 +22,15 @@
     <h3 class="mt-4">{{$small_text}}</h3>
       <form action="{{ url('/result')}}" method="get" class="mt-1 form-horizontal">
         <h4 class="mt-2">{{$genre['title1']}}</h4>
-        <select class="form-select" name="nnnnn" id="nnnnn">
+        <select class="form-select" name="genre" id="nnnnn">
           <option selected disabled>選択してください</option>
-          @foreach ($genre['list1'] as $key => $value)
-          <option value="{{ $key }}">{{ $value->getName() }}</option>
+          @foreach ($genre['list1'] as $genre_)
+          <option value="{{ $genre_ }}">{{ $genre_->getName() }}</option>
           @endforeach
-        </select>
+          </select>
 
         <h4 class="mt-2">{{ $genre['many']['title'] }}</h4>
-          <select class="form-select" name="nnnnn" id="nnnnn">
+          <select class="form-select" name="many" id="nnnnn">
           <option selected disabled>選択してください</option>
             @foreach ($genre['many']['list1'] as $many)
             <option value="{{ $many }}">{{ $many->getName() }}</option>
