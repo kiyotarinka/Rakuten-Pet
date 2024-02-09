@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Enums\ManeyTypes;
 use App\Enums\GenruTypes;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 use RakutenRws_Client;
 
 class RankutenController extends Controller
@@ -27,24 +29,31 @@ class RankutenController extends Controller
         return view('search', $datas);
     }
 
-    public function result()
+    public function result(Request $request)
     {
         $client = new RakutenRws_Client();
         define("RAKUTEN_APPLICATION_ID", config('app.rakuten_id'));
 
-        $client->setApplicationId(RAKUTEN_APPLICATION_ID);
-        $response = $client->execute('IchibaItemSearch',array(
-            'keyword' => '任意のキーワードを入れてください',
-            'minPrice' => 100,
-            'maxPrice' => 10000,
-        ));
+        // 
+        $maneyKey = $request->input("");
+        $maney = ManeyTypes::from($maneyKey);
+        $manyRange = $maney->getParams();
 
+        $client->setApplicationId(RAKUTEN_APPLICATION_ID);
+        $response = $client->execute('IchibaItemSearch', [
+            'keyword' => 'ねこ',
+            'minPrice' => $manyRange['minPrice'],
+            'maxPrice' => 10000,
+        ]);
 
         $items = [];
+        $datas = [];
         if(!$response->isOk()){
             abort(500);
 
         } else {
+            $datas = $response->getData();
+
             foreach($response as $key => $rakutenItem){
                 $items[$key]['title'] = $rakutenItem['itemName'];
                 $items[$key]['price'] = $rakutenItem['itemPrice'];
@@ -62,7 +71,9 @@ class RankutenController extends Controller
 
         $datas = [
             'title' => "検索結果",
+            'small_text' => "検索結果",
             'users' => [],
+            'result_summary' => $datas,
             'items' => $items,
         ];
 
